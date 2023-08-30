@@ -1,7 +1,7 @@
 import requests, xlrd, os
 from botutils import Config
 
-class XlWKReply:
+class XlKWReply:
     def __init__(self, kdocs_id: str):
         self.kdocs_id = kdocs_id
         self.save_path = "cache/XlKWReply/" + self.kdocs_id + ".xls"
