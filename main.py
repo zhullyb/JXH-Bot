@@ -1,6 +1,7 @@
 from flask import Flask, request
 from botutils import Config
 import requests
+from MessageHandler import messageHandler
 
 base_url = "http://127.0.0.1:5700/"
 app = Flask(__name__)
@@ -12,8 +13,7 @@ def mainHandler():
         if data['meta_event_type'] == 'heartbeat':
             return 'ok'
     elif data['post_type'] == 'message':
-        # messageHandler(data)
-        pass
+        messageHandler(data)
     
     print(data)
     # if data['message'] == 'ping':
