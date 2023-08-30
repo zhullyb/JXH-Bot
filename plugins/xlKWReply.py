@@ -12,7 +12,9 @@ class XlWKReply:
             
     def check(self, data):
         key = data['message'].replace('％','%')
-        if key in self.kvdict:
+        if key == '%reload':
+            self.reload()
+        elif key in self.kvdict:
             self.send(self.kvdict[key], data)
 
     def reload(self):
